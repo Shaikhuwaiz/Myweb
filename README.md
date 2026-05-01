@@ -1,76 +1,43 @@
-# Portfolio
-![OscarHernandez-portfolio](https://github.com/user-attachments/assets/e284a42b-15c5-495c-99c7-ad5c1eb3bbe7)
-![Deploy Status](https://img.shields.io/badge/Deploy-Vercel-black?style=flat&logo=vercel)
+# Astro Starter Kit: Minimal
 
----
-
-[Demo](https://oscarhernandez.vercel.app/)
-
-[Astro Themes](https://astro.build/themes/details/dark-minimal/)
-
-[ReactBits Showcase](https://www.reactbits.dev/showcase) 
-
-The component `<LetterGlitch \>` was taken from [ReactBits.dev](https://www.reactbits.dev/)
-
-## **Stack**  
-### **Frontend**  
-![Astro](https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
-
-### **Tools**  
-![Figma](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white)
-![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=black)
-![Canva](https://img.shields.io/badge/Canva-c900c3?logo=canva&logoColor=white)
-
-### **Show your favorite Spotify album (or your own)** ![Spotify](https://img.shields.io/badge/Spotify-06cc1a?logo=spotify&logoColor=white)
-1. Choose your Spotify album
-2. Access the share options
-3. Select 'copy embed code'
-```
-<iframe src="https://open.spotify.com/embed/album/YOUR_ALBUM_ID_HERE" style="border-radius:12px border:0;" class="w-full h-40" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-```
-4. Insert the embed code on footer.astro
-
-That's it!
-
-## **Project structure**
-```
-public/
-└── svg/
-src/
-├── Components/
-|    ├── contact.astro
-|    ├── footer.astro
-|    ├── home.astro
-|    ├── logoWall.astro
-|    ├── nav.astro
-|    └── projects.astro
-├── layouts/
-|    └── Layout.astro
-├── React/
-|    ├── LetterGlitch.tsx
-|    ├── LikeButton.tsx
-|    └── SkillsList.tsx
-└── pages/
-     └── index.astro
+```sh
+npm create astro@latest -- --template minimal
 ```
 
-## **Local configuration** 
-1. Clone the repo:  
-```
-git clone https://github.com/Gothsec/Astro-portfolio
-```
-2. Install dependencies:
-```  
-npm install
-```
-3. Start the development server:
-```  
-npm run dev
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-> **Important Notice:**  
-> This project is licensed under the [MIT License](https://opensource.org/licenses/mit).  
-> According to the license terms, any redistribution (including compiled or modified versions), you **must** retain the original copyright 
-> notice and the full license text. Copyright © 2026 Oscar Hernandez. All rights reserved.
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

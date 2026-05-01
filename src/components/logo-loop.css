@@ -1,0 +1,68 @@
+.logo-loop {
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  overflow: hidden;
+  padding: 40px 0;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+
+.logo-item {
+  flex: 0 0 auto;
+  padding: 15px;
+   margin-right: 30px;
+}
+.logo-icon {
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+.logo-item:hover .logo-icon {
+  color: rgba(255, 255, 255, 1);
+}
+
+.logo-item span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.logo-item:hover span {
+  color: rgba(255, 255, 255, 1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.logo-loop-track {
+  display: flex;
+  width: max-content;
+  padding-right: 30px;   
+  animation: scroll 30s linear infinite;
+}

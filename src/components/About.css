@@ -1,0 +1,42 @@
+.about {
+  margin-top: 120px;
+  color: white;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.left h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.left p {
+  color: #a1a1aa;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  max-width: 500px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 12px;
+
+  background: rgba(20, 20, 30, 0.6);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.label {
+  font-size: 12px;
+  color: #7c3aed;
+  margin-bottom: 6px;
+}
