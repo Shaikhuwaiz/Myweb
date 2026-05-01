@@ -67,6 +67,7 @@ export default function Showcase() {
 
   return (
     <section className="showcase-section">
+      <h1 className="showcase-title">My Projects</h1>
       <div className="showcase-inner">
         {/* Left panel */}
         <div className="showcase-left">
