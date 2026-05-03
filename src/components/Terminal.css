@@ -55,7 +55,7 @@
 .muted {
   color: #a1a1aa;
 }.terminal {
-  white-space: pre-line;  /* preserves line breaks */
+  white-space: pre-line;  
 }
 .dim { color: #6b7280; }
 .text { color: #e5e7eb; }

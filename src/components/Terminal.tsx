@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 interface Segment {
   text: string;
@@ -154,6 +154,15 @@ export default function Terminal() {
 
   return () => clearInterval(interval);
 }, []);
+useEffect(() => {
+  if (contentRef.current) {
+    contentRef.current.scrollTo({
+      top: contentRef.current.scrollHeight,
+      behavior: "smooth",
+    });
+  }
+}, [index]);
+const contentRef = useRef<HTMLDivElement | null>(null);
 
   const visible = lines.slice(0, index);
 
@@ -165,7 +174,7 @@ export default function Terminal() {
       <span className="dot green"></span>
     </div>
 
-    <div className="terminal-content">
+    <div className="terminal-content" ref={contentRef}>
       {visible.map((line, i) => (
         <p key={i}>
           {line.parts.map((part, j) => (
