@@ -13,22 +13,37 @@
 
 <script>
   const links = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
+  const sectionIds = ['home', 'projects', 'contact'];
 
   function setActive(id: string) {
     links.forEach(l => l.classList.toggle('nav-link--active', l.dataset.section === id));
   }
 
-  const observer = new IntersectionObserver(
-    entries => { entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); }); },
-    { rootMargin: '-40% 0px -55% 0px' }
-  );
+  function onScroll() {
+    const scrollMid = window.scrollY + window.innerHeight * 0.35;
+    let active = sectionIds[0];
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top + window.scrollY <= scrollMid) {
+        active = id;
+      }
+    }
+    setActive(active);
+  }
 
-  ['home', 'projects', 'contact'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) observer.observe(el);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.getElementById(link.dataset.section!);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => setActive(link.dataset.section!), 50);
+      }
+    });
   });
-
-  setActive('home');
 </script>
 
 <style>
