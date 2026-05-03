@@ -7,6 +7,8 @@ import About from '../components/About.astro';
 import '../components/About.css';
 import Showcase from "../components/Showcase";
 import "../components/Showcase.css";
+import Contact from "../components/Contact";
+import "../components/Contact.css";
 
 ---
 
@@ -24,6 +26,7 @@ import "../components/Showcase.css";
       <LogoLoop client:load />
         <About />
        <Showcase client:visible />
+       <Contact client:visible />
     </main>
   </body>
 </html>
