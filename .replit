@@ -38,3 +38,8 @@ externalPort = 80
 deploymentTarget = "static"
 build = ["npm", "run", "build"]
 publicDir = "dist"
+
+[userenv]
+
+[userenv.shared]
+PUBLIC_WEB3FORMS_KEY = "82284dca-b09e-40fc-86ff-2bc809aa92e8"

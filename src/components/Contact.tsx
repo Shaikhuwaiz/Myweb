@@ -3,6 +3,8 @@ import { FaGithub, FaEnvelope } from "react-icons/fa";
 import { FaXTwitter, FaArrowRight, FaCheck } from "react-icons/fa6";
 import "./Contact.css";
 
+const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY;
+
 const checklist = [
   "Response within 24 hours, guaranteed",
   "Open to freelance & full-time opportunities",
@@ -13,18 +15,44 @@ const checklist = [
 const socials = [
   { icon: <FaGithub size={16} />, label: "GitHub", href: "https://github.com" },
   { icon: <FaXTwitter size={15} />, label: "X / Twitter", href: "https://twitter.com" },
-  { icon: <FaEnvelope size={15} />, label: "Email", href: "mailto:hello@example.com" },
+  { icon: <FaEnvelope size={15} />, label: "Email", href: "mailto:sheikhuwaiz@gmail.com" },
 ];
 
 export default function Contact() {
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("success");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New message from ${form.name} — Portfolio Contact`,
+          from_name: form.name,
+          email: form.email,
+          message: form.message,
+          redirect: false,
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+      } else {
+        setErrorMsg(data.message || "Something went wrong. Please try again.");
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg("Network error. Please check your connection and try again.");
+      setStatus("error");
+    }
   };
 
   const set = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -51,6 +79,19 @@ export default function Contact() {
               </li>
             ))}
           </ul>
+
+          <div className="contact-divider" />
+
+          {/* Reviewer strip */}
+          <div className="contact-reviewer">
+            <div className="contact-reviewer-avatars">
+              <img src="/reviewer-strip.png" alt="People who reached out" className="contact-reviewer-img" />
+            </div>
+            <div className="contact-reviewer-text">
+              <span className="contact-reviewer-name">Reviewed by people we trust</span>
+              <span className="contact-reviewer-sub">plus developers across the globe</span>
+            </div>
+          </div>
 
           <div className="contact-divider" />
 
@@ -84,7 +125,7 @@ export default function Contact() {
               <div className="contact-row">
                 <div className="contact-field">
                   <label htmlFor="c-name">Full name*</label>
-                  <input id="c-name" type="text" placeholder="Owaiz Khan" required value={form.name} onChange={set("name")} />
+                  <input id="c-name" type="text" placeholder="Owaiz" required value={form.name} onChange={set("name")} />
                 </div>
                 <div className="contact-field">
                   <label htmlFor="c-email">Email*</label>
@@ -96,6 +137,10 @@ export default function Contact() {
                 <label htmlFor="c-message">Message*</label>
                 <textarea id="c-message" placeholder="Tell me about your project or opportunity..." rows={5} required value={form.message} onChange={set("message")} />
               </div>
+
+              {status === "error" && (
+                <p className="contact-error">{errorMsg}</p>
+              )}
 
               <p className="contact-privacy">
                 I only use this to reply to you. No spam, ever.
