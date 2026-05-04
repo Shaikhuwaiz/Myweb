@@ -14,19 +14,9 @@ import ShinyText from './ShinyText';
   </div>
 
   <div class="right">
-    <ShinyText
-      client:load
-      text="Designing and developing backend systems using Python, Django, and modern database solutions."
-      speed={3}
-      delay={0}
-      color="#b5b5b5"
-      shineColor="#ffffff"
-      spread={120}
-      direction="left"
-      yoyo={false}
-      pauseOnHover={false}
-      disabled={false}
-    />
+    <p class="hero-desc">
+      Designing and developing backend systems using&nbsp;<ShinyText client:load text="Python" speed={3} color="#b5b5b5" shineColor="#ffffff" spread={80} />,&nbsp;<ShinyText client:load text="Django" speed={3} color="#b5b5b5" shineColor="#ffffff" spread={80} />, and&nbsp;<ShinyText client:load text="modern database" speed={3} color="#b5b5b5" shineColor="#ffffff" spread={80} />&nbsp;solutions.
+    </p>
   </div>
 </section>
 
@@ -58,9 +48,11 @@ import ShinyText from './ShinyText';
     align-items: center;
   }
 
-  .right span {
-    font-size: 18px;
-    line-height: 1.7;
+  .hero-desc {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.75;
     max-width: 420px;
+    color: #b5b5b5;
   }
 </style>
