@@ -11,36 +11,28 @@
   </nav>
 </header>
 
-<script>
-  const links = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
+<script is:inline>
+  const links = document.querySelectorAll('.nav-link');
   const sectionIds = ['home', 'projects', 'contact'];
 
-  function setActive(id: string) {
-    links.forEach(l => l.classList.toggle('nav-link--active', l.dataset.section === id));
-  }
-
-  function onScroll() {
-    const scrollMid = window.scrollY + window.innerHeight * 0.35;
-    let active = sectionIds[0];
-    for (const id of sectionIds) {
-      const el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top + window.scrollY <= scrollMid) {
-        active = id;
+  function setActive(id) {
+    links.forEach(l => {
+      if (l.dataset.section === id) {
+        l.classList.add('nav-link--active');
+      } else {
+        l.classList.remove('nav-link--active');
       }
-    }
-    setActive(active);
+    });
   }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
   links.forEach(link => {
-    link.addEventListener('click', e => {
+    link.addEventListener('click', function (e) {
       e.preventDefault();
-      const target = document.getElementById(link.dataset.section!);
+      const target = document.getElementById(this.dataset.section);
+
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setTimeout(() => setActive(link.dataset.section!), 50);
+        target.scrollIntoView({ behavior: 'smooth' });
+        setActive(this.dataset.section);
       }
     });
   });
