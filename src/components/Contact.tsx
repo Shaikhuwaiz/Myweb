@@ -64,7 +64,7 @@ export default function Contact() {
 
         {/* ── LEFT ── */}
         <div className="contact-left">
-          <span className="contact-badge">Contact</span>
+          <h1 className="showcase-title">Contact</h1>
 
           <h2 className="contact-heading">
             A simpler way to<br />
@@ -82,16 +82,23 @@ export default function Contact() {
 
           <div className="contact-divider" />
 
-          {/* Reviewer strip */}
-          <div className="contact-reviewer">
-            <div className="contact-reviewer-avatars">
-              <img src="/reviewer-strip.png" alt="People who reached out" className="contact-reviewer-img" />
-            </div>
-            <div className="contact-reviewer-text">
-              <span className="contact-reviewer-name">Reviewed by people we trust</span>
-              <span className="contact-reviewer-sub">plus developers across the globe</span>
-            </div>
-          </div>
+          
+       <div className="review">
+  <div className="avatars">
+    <img src="https://randomuser.me/api/portraits/women/44.jpg" />
+    <img src="https://randomuser.me/api/portraits/men/32.jpg" />
+    <img src="https://randomuser.me/api/portraits/men/12.jpg" />
+  </div>
+
+  <div className="review-text">
+    <div className="review-names">
+      Ana Mirov, Jules Park & Sam Oduya
+    </div>
+    <div className="review-sub">
+      plus 40+ ops leaders across SMB and mid-market
+    </div>
+  </div>
+</div>
 
           <div className="contact-divider" />
 
