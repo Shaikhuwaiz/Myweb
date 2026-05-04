@@ -1,7 +1,6 @@
 ---
 import StaggeredText from './StaggeredText';
-import BlurHighlight from './BlurHighlight';
-
+import ShinyText from './ShinyText';
 ---
 
 <section class="hero">
@@ -11,15 +10,23 @@ import BlurHighlight from './BlurHighlight';
       <div class="hero-title-line gradient-text">
         <StaggeredText client:load text="Python      Developer" />
       </div>
-      
     </h1>
   </div>
 
   <div class="right">
-    <BlurHighlight client:load
-  text="Transforming ideas into interactive and seamless digital experiences with modern frontend development."
-  highlights={["interactive", "seamless", "modern"]}
-/>
+    <ShinyText
+      client:load
+      text="Designing and developing backend systems using Python, Django, and modern database solutions."
+      speed={3}
+      delay={0}
+      color="#b5b5b5"
+      shineColor="#ffffff"
+      spread={120}
+      direction="left"
+      yoyo={false}
+      pauseOnHover={false}
+      disabled={false}
+    />
   </div>
 </section>
 
@@ -28,36 +35,32 @@ import BlurHighlight from './BlurHighlight';
     display: grid;
     grid-template-columns: 0.5fr 0.8fr;
     gap: 50px;
-    
-    margin-top: 10px;   
+    margin-top: 10px;
     align-items: center;
-    min-height: 50vh;   
-
+    min-height: 50vh;
     color: white;
   }
-  
+
   .left h1 {
     font-size: 58px;
     line-height: 1.2;
     margin: 0;
   }
-  
+
   .intro {
     color: #9ca3af;
     font-size: 20px;
     margin-bottom: 8px;
   }
-  
+
   .right {
     display: flex;
     align-items: center;
-}
+  }
 
-.right p {
-  color: #a1a1aa;
-  line-height: 1.6;
-  max-width: 420px;
-  margin: 0;          
-}
+  .right span {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 420px;
+  }
 </style>
-
