@@ -1,52 +1,57 @@
-import React, { useEffect, useRef } from 'react';
-import './shiny-text.css';
+import "./ShinyText.css";
 
 interface ShinyTextProps {
   text: string;
-  disabled?: boolean;
   speed?: number;
+  delay?: number;
+  color?: string;
+  shineColor?: string;
+  spread?: number;
+  direction?: "left" | "right";
+  yoyo?: boolean;
+  pauseOnHover?: boolean;
+  disabled?: boolean;
   className?: string;
 }
 
-export const ShinyText: React.FC<ShinyTextProps> = ({ 
-  text, 
-  disabled = false, 
-  speed = 5,
-  className = ''
-}) => {
-  const elementRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (disabled || !elementRef.current) return;
-
-    const element = elementRef.current;
-    const shineStyle = element.style;
-    let x = 0;
-
-    const animate = () => {
-      x = (x + speed) % 200;
-      shineStyle.backgroundPosition = `${x}% center`;
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-  }, [disabled, speed]);
+export default function ShinyText({
+  text,
+  speed = 2,
+  delay = 0,
+  color = "#b5b5b5",
+  shineColor = "#ffffff",
+  spread = 120,
+  direction = "left",
+  yoyo = false,
+  pauseOnHover = false,
+  disabled = false,
+  className = "",
+}: ShinyTextProps) {
+  const style = {
+    "--shiny-color": color,
+    "--shine-color": shineColor,
+    "--spread": `${spread}px`,
+    "--speed": `${speed}s`,
+    "--delay": `${delay}s`,
+    "--play-dir": direction === "left" ? "normal" : "reverse",
+    "--timing": yoyo ? "ease-in-out" : "linear",
+    "--iter": yoyo ? "infinite" : "infinite",
+    "--anim-dir": yoyo ? "alternate" : "normal",
+  } as React.CSSProperties;
 
   return (
-    <div
-      ref={elementRef}
-      className={`shiny-text ${className}`}
-      style={{
-        backgroundImage: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent)',
-        backgroundSize: '200% 100%',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text',
-      }}
+    <span
+      className={[
+        "shiny-text",
+        disabled ? "shiny-text--off" : "",
+        pauseOnHover ? "shiny-text--pause-hover" : "",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      style={style}
     >
       {text}
-    </div>
+    </span>
   );
-};
-
-export default ShinyText;
+}
