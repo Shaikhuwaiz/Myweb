@@ -9,35 +9,24 @@ import Showcase from "../components/Showcase";
 import "../components/Showcase.css";
 import Contact from "../components/Contact";
 import "../components/Contact.css";
+
 ---
 
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>Portfolio</title>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5BF4PP1CD"></script>
-
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-S5BF4PP1CD');
-  </script>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Portfolio</title>
+  </head>
 
   <body>
     <main class="container">
       <Navbar />
       <div id="home"><Hero /></div>
       <LogoLoop client:load />
-
-        <About />
-       <Showcase client:visible />  
-       <Contact client:visible />
-
-
+      <About />
+      <div id="projects"><Showcase client:visible /></div>
+      <div id="contact"><Contact client:visible /></div>
     </main>
   </body>
 </html>
