@@ -100,15 +100,9 @@ export default function Contact() {
   </div>
 </div>
 
-          <div className="contact-divider" />
+          
 
-          <div className="contact-socials">
-            {socials.map((s, i) => (
-              <a key={i} href={s.href} aria-label={s.label} target="_blank" rel="noopener noreferrer" className="contact-social-btn">
-                {s.icon}
-              </a>
-            ))}
-          </div>
+          
         </div>
 
         {/* ── RIGHT — FORM CARD ── */}

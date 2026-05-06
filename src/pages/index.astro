@@ -9,7 +9,8 @@ import Showcase from "../components/Showcase";
 import "../components/Showcase.css";
 import Contact from "../components/Contact";
 import "../components/Contact.css";
-
+import Footer from "../components/Footer.astro";
+import "../components/Footer.css";
 ---
 
 <html lang="en">
@@ -27,6 +28,9 @@ import "../components/Contact.css";
       <About />
       <div id="projects"><Showcase client:visible /></div>
       <div id="contact"><Contact client:visible /></div>
+      <Footer />
+    
+      </main>
     </main>
   </body>
 </html>
