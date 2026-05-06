@@ -5,25 +5,25 @@ const DURATION = 4000;
 
 const items = [
   {
-    title: "OpenClaw Gateway",
-    desc: "Terminal-based system with real-time logs.",
-    image: "/image.png",
-     github: "https://github.com/your-repo",
-    live: "https://your-site.com",
+    title: "Talaria",
+    desc: "E-commerce platform with advanced features",
+    livePreview: "https://www.talaria.co.in/",
+     github: "https://github.com/Shaikhuwaiz/Talaria.git",
+    live: "https://www.talaria.co.in/",
   },
   {
-    title: "Django API",
-    desc: "Scalable backend APIs with auth.",
-    image: "/img1.jpg",
-    github: "https://github.com/your-repo",
-    live: "https://your-site.com",
+    title: "Job Listings Scraper",
+    desc: "Python scraper that exports job listings to CSV",
+    livePreview: "https://python-job-listings-scraper.vercel.app/",
+    github: "https://github.com/Shaikhuwaiz/Python-Job-Listings-Scraper.git",
+    live: "https://python-job-listings-scraper.vercel.app/",
   },
   {
-    title: "Automation Tool",
-    desc: "Python scripts to reduce manual work.",
-    image: "/img2.jpg",
-    github: "https://github.com/your-repo",
-    live: "https://your-site.com",
+    title: "Clean Netflix Dataset",
+    desc: "Data cleaning project for Netflix CSV datasets",
+     livePreview: "https://clean-the-netflix-dataset.vercel.app/",
+    github: "https://github.com/Shaikhuwaiz/Clean-the-Netflix-Dataset.git",
+    live: "https://clean-the-netflix-dataset.vercel.app/",
   },
 ];
 
@@ -53,12 +53,13 @@ export default function Showcase() {
       if (elapsed >= DURATION) {
         const next = (active + 1) % items.length;
         setFadeIn(false);
+        
         setTimeout(() => {
           setActive(next);
           setProgress(0);
           startRef.current = Date.now();
           setFadeIn(true);
-        }, 200);
+        }, 220);
       }
     }, 16);
 
@@ -108,22 +109,26 @@ export default function Showcase() {
   </div>
 
   <div className="showcase-item-actions">
-   <a href="#" className="icon-btn" target="_blank">
+
+ 
+  <a href={item.github} className="icon-btn" target="_blank">
     <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
       <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56v-2.1c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.27 1.2-3.07-.12-.3-.52-1.52.11-3.17 0 0 .98-.31 3.2 1.17.93-.26 1.93-.39 2.92-.39.99 0 1.99.13 2.92.39 2.22-1.48 3.2-1.17 3.2-1.17.63 1.65.23 2.87.11 3.17.75.8 1.2 1.82 1.2 3.07 0 4.41-2.68 5.39-5.24 5.67.41.35.77 1.04.77 2.1v3.12c0 .31.21.67.8.56A11.51 11.51 0 0023.5 12c0-6.35-5.15-11.5-11.5-11.5z"/>
     </svg>
   </a>
-     <a href={item.github} className="icon-btn" target="_blank">
+
+  
+  <a href={item.live} className="icon-btn" target="_blank">
     <FiEye />
   </a>
- 
-  </div>
+
+</div>
 </button>
             );
           })}
    <div className="showcase-more">
     <a
-    href="https://github.com/YOUR_USERNAME"
+    href="https://github.com/Shaikhuwaiz?tab=repositories"
     target="_blank"
     className="more-btn"
   >
@@ -143,12 +148,25 @@ export default function Showcase() {
 </div>
        
         <div className="showcase-right">
-          <div className={`showcase-image-wrap${fadeIn ? " showcase-fade-in" : " showcase-fade-out"}`}>
-            <img
-              src={items[active].image}
-              alt={items[active].title}
-              className="showcase-image"
-            />
+  <div
+    className={`showcase-image-wrap${
+      fadeIn ? " showcase-fade-in" : " showcase-fade-out"
+    }`}
+  >
+    {items[active].livePreview ? (
+      <iframe
+        key={items[active].livePreview}
+  loading="lazy"
+        src={items[active].livePreview}
+        className="live-frame"
+      />
+    ) : (
+      <img
+        src={items[active].livePreview}
+        alt={items[active].title}
+        className="showcase-image"
+      />
+    )}
             <div className="showcase-image-overlay" />
           </div>
         </div>
