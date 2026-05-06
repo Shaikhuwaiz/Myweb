@@ -119,7 +119,7 @@ overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-
+color: rgba(255,255,255,0.7);
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
 
@@ -158,7 +158,8 @@ overflow: hidden;
   top: 0;
   left: 0;
   width: 100%;
-  height: 180px; /* keep it only top */
+  height: 180px; 
+  padding: 60px 40px;
   overflow: hidden;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
