@@ -118,7 +118,7 @@ export default function Contact() {
                 className="contact-send-btn"
                 onClick={() => { setStatus("idle"); setForm({ name: "", email: "", message: "" }); }}
               >
-                Send another
+                Send another message
               </button>
             </div>
           ) : (
