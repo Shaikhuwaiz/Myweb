@@ -10,6 +10,7 @@ const items = [
     livePreview: "https://www.talaria.co.in/",
      github: "https://github.com/Shaikhuwaiz/Talaria.git",
     live: "https://www.talaria.co.in/",
+    useIframe: true,
   },
   {
     title: "Job Listings Scraper",
@@ -17,6 +18,7 @@ const items = [
     livePreview: "https://python-job-listings-scraper.vercel.app/",
     github: "https://github.com/Shaikhuwaiz/Python-Job-Listings-Scraper.git",
     live: "https://python-job-listings-scraper.vercel.app/",
+    useIframe: true,
   },
   {
     title: "Clean Netflix Dataset",
@@ -24,6 +26,7 @@ const items = [
      livePreview: "https://clean-the-netflix-dataset.vercel.app/",
     github: "https://github.com/Shaikhuwaiz/Clean-the-Netflix-Dataset.git",
     live: "https://clean-the-netflix-dataset.vercel.app/",
+    useIframe: false,
   },
 ];
 
