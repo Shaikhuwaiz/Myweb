@@ -156,7 +156,7 @@ export default function Showcase() {
     {items[active].livePreview ? (
       <iframe
         key={items[active].livePreview}
-  loading="lazy"
+  loading="eager"
         src={items[active].livePreview}
         className="live-frame"
       />
