@@ -7,7 +7,7 @@ const items = [
   {
     title: "Talaria",
     desc: "E-commerce platform with advanced features",
-    livePreview: "https://r.jina.ai/http://https://www.talaria.co.in/",
+    livePreview: "https://www.talaria.co.in/",
     github: "https://github.com/Shaikhuwaiz/Talaria.git",
     live: "https://www.talaria.co.in/",
     useIframe: true,
