@@ -1,0 +1,28 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="32" fill="#060816"/>
+  <rect x="40" y="40" width="1120" height="680" rx="28" fill="url(#bg)"/>
+  <rect x="82" y="92" width="1036" height="536" rx="24" fill="#0A1024" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="116" y="132" width="300" height="24" rx="12" fill="#7C3AED" fill-opacity="0.8"/>
+  <rect x="116" y="176" width="220" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.22"/>
+  <rect x="116" y="204" width="260" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.16"/>
+  <rect x="116" y="260" width="220" height="140" rx="18" fill="#111827" stroke="#4C1D95"/>
+  <rect x="360" y="260" width="220" height="140" rx="18" fill="#111827" stroke="#4C1D95"/>
+  <rect x="604" y="260" width="220" height="140" rx="18" fill="#111827" stroke="#4C1D95"/>
+  <rect x="848" y="260" width="220" height="140" rx="18" fill="#111827" stroke="#4C1D95"/>
+  <rect x="116" y="438" width="952" height="140" rx="22" fill="#0F172A" stroke="#1E293B"/>
+  <rect x="156" y="482" width="220" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.16"/>
+  <rect x="156" y="510" width="180" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.12"/>
+  <rect x="792" y="472" width="220" height="48" rx="24" fill="url(#accent)"/>
+  <text x="160" y="618" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="700">Talaria</text>
+  <text x="160" y="666" fill="#A78BFA" font-family="Segoe UI, Arial, sans-serif" font-size="26">E-commerce experience preview</text>
+  <defs>
+    <linearGradient id="bg" x1="80" y1="60" x2="1100" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#040816"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="792" y1="472" x2="1012" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+</svg>

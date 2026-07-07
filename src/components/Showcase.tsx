@@ -7,8 +7,8 @@ const items = [
   {
     title: "Talaria",
     desc: "E-commerce platform with advanced features",
-    livePreview: "https://www.talaria.co.in/",
-     github: "https://github.com/Shaikhuwaiz/Talaria.git",
+    livePreview: "https://r.jina.ai/http://https://www.talaria.co.in/",
+    github: "https://github.com/Shaikhuwaiz/Talaria.git",
     live: "https://www.talaria.co.in/",
     useIframe: true,
   },
@@ -26,7 +26,7 @@ const items = [
      livePreview: "https://clean-the-netflix-dataset.vercel.app/",
     github: "https://github.com/Shaikhuwaiz/Clean-the-Netflix-Dataset.git",
     live: "https://clean-the-netflix-dataset.vercel.app/",
-    useIframe: false,
+    useIframe: true,
   },
 ];
 
@@ -156,10 +156,10 @@ export default function Showcase() {
       fadeIn ? " showcase-fade-in" : " showcase-fade-out"
     }`}
   >
-    {items[active].livePreview ? (
+    {items[active].useIframe && items[active].livePreview ? (
       <iframe
         key={items[active].livePreview}
-  loading="eager"
+        loading="eager"
         src={items[active].livePreview}
         className="live-frame"
       />
