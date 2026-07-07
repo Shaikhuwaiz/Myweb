@@ -159,9 +159,9 @@ export default function Showcase() {
     {items[active].useIframe && items[active].livePreview ? (
       <iframe
         key={items[active].livePreview}
-        loading="eager"
+        loading="lazy"
         src={items[active].livePreview}
-        className="live-frame"
+        className={`live-frame${active === 0 ? " live-frame--talaria" : ""}`}
       />
     ) : (
       <img
