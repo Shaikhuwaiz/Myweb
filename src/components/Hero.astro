@@ -1,8 +1,8 @@
 ---
-import StaggeredText from './StaggeredText';
-import BlurHighlight from './BlurHighlight';
-import './BlurHighlight.css';
-import ShinyText from './ShinyText';
+import StaggeredText from "./StaggeredText";
+import BlurHighlight from "./BlurHighlight";
+import "./BlurHighlight.css";
+import ShinyText from "./ShinyText";
 ---
 
 <section class="hero">
@@ -16,10 +16,29 @@ import ShinyText from './ShinyText';
   </div>
 
   <div class="right">
-
-  
     <p class="hero-desc">
-      Designing and developing backend systems using <ShinyText client:load text="Python" speed={3} color="#b5b5b5" shineColor="#ffffff" spread={80} />, <ShinyText client:load text="Django" speed={3} color="#b5b5b5" shineColor="#ffffff" spread={80} />, and <ShinyText client:load text="modern database" speed={3} color="#b5b5b5" shineColor="#ffffff" spread={80} /> solutions.
+      Designing and developing backend systems using <ShinyText
+        client:load
+        text="Python"
+        speed={3}
+        color="#b5b5b5"
+        shineColor="#ffffff"
+        spread={80}
+      />, <ShinyText
+        client:load
+        text="Django"
+        speed={3}
+        color="#b5b5b5"
+        shineColor="#ffffff"
+        spread={80}
+      />, and <ShinyText
+        client:load
+        text="modern database"
+        speed={3}
+        color="#b5b5b5"
+        shineColor="#ffffff"
+        spread={80}
+      /> solutions.
     </p>
   </div>
 </section>
@@ -58,5 +77,36 @@ import ShinyText from './ShinyText';
     line-height: 1.75;
     max-width: 420px;
     color: #b5b5b5;
+  }
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 0 20px;
+      min-height: auto;
+    }
+
+    .left h1 {
+      font-size: 64px;
+      line-height: 0.95;
+    }
+
+    .hero-title-line {
+      max-width: 250px;
+    }
+
+    .right {
+      align-items: flex-start;
+    }
+
+    .hero-desc {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 100%;
+    }
+
+    .intro {
+      font-size: 18px;
+    }
   }
 </style>
